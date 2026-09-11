@@ -1,0 +1,252 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+                              build/startup.o (memset)
+/usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+                              build/startup.o (memcpy)
+
+Discarded input sections
+
+ .group         0x00000000        0xc build/startup.o
+ .group         0x00000000        0xc build/startup.o
+ .group         0x00000000        0xc build/startup.o
+ .group         0x00000000        0xc build/startup.o
+ .group         0x00000000        0xc build/startup.o
+ .group         0x00000000        0xc build/startup.o
+ .group         0x00000000        0xc build/startup.o
+ .text          0x00000000        0x0 build/startup.o
+ .data          0x00000000        0x0 build/startup.o
+ .bss           0x00000000        0x0 build/startup.o
+ .group         0x00000000        0xc build/main.o
+ .group         0x00000000        0xc build/main.o
+ .group         0x00000000        0xc build/main.o
+ .group         0x00000000        0xc build/main.o
+ .group         0x00000000        0xc build/main.o
+ .group         0x00000000        0xc build/main.o
+ .group         0x00000000        0xc build/main.o
+ .group         0x00000000        0xc build/main.o
+ .text          0x00000000        0x0 build/main.o
+ .data          0x00000000        0x0 build/main.o
+ .bss           0x00000000        0x0 build/main.o
+ .debug_macro   0x00000000      0xade build/main.o
+ .debug_macro   0x00000000       0x22 build/main.o
+ .debug_macro   0x00000000       0x56 build/main.o
+ .debug_macro   0x00000000       0x51 build/main.o
+ .debug_macro   0x00000000      0x103 build/main.o
+ .debug_macro   0x00000000       0x6a build/main.o
+ .debug_macro   0x00000000      0x1df build/main.o
+ .text          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+ .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+ .ARM.extab     0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00080000         xr
+RAM              0x20000000         0x00020000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD build/startup.o
+LOAD build/main.o
+START GROUP
+LOAD /usr/lib/gcc/arm-none-eabi/15.2.0/thumb/v7e-m+fp/hard/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a
+END GROUP
+                0x20020000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000200                        _Min_Heap_Size = 0x200
+                0x00000400                        _Min_Stack_Size = 0x400
+
+.text           0x08000000      0x2dc
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0x40 build/startup.o
+                0x08000000                vector_table
+ *(.text)
+ .text          0x08000040      0x134 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+                0x08000040                memcpy
+ *(.text*)
+ .text.Default_Handler
+                0x08000174        0x4 build/startup.o
+                0x08000174                DebugMon_Handler
+                0x08000174                HardFault_Handler
+                0x08000174                SysTick_Handler
+                0x08000174                PendSV_Handler
+                0x08000174                NMI_Handler
+                0x08000174                UsageFault_Handler
+                0x08000174                Default_Handler
+                0x08000174                MemManage_Handler
+                0x08000174                SVC_Handler
+                0x08000174                BusFault_Handler
+ .text.Reset_Handler
+                0x08000178       0x50 build/startup.o
+                0x08000178                Reset_Handler
+ .text.startup.main
+                0x080001c8       0x8c build/main.o
+                0x080001c8                main
+ .text.memset   0x08000254       0x88 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+                0x08000254                memset
+ *(.rodata)
+ *(.rodata*)
+                0x080002dc                        . = ALIGN (0x4)
+                0x080002dc                        _etext = .
+                0x080002e4                        _sidata = LOADADDR (.data)
+
+.glue_7         0x080002dc        0x0
+ .glue_7        0x080002dc        0x0 linker stubs
+
+.glue_7t        0x080002dc        0x0
+ .glue_7t       0x080002dc        0x0 linker stubs
+
+.vfp11_veneer   0x080002dc        0x0
+ .vfp11_veneer  0x080002dc        0x0 linker stubs
+
+.v4_bx          0x080002dc        0x0
+ .v4_bx         0x080002dc        0x0 linker stubs
+
+.iplt           0x080002dc        0x0
+ .iplt          0x080002dc        0x0 build/startup.o
+
+.rel.dyn        0x080002dc        0x0
+ .rel.iplt      0x080002dc        0x0 build/startup.o
+
+.ARM.exidx      0x080002dc        0x8
+ .ARM.exidx     0x080002dc        0x8 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+.data           0x20000000        0x0 load address 0x080002e4
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x080002e4
+ .igot.plt      0x20000000        0x0 build/startup.o
+
+.bss            0x20000000        0x0 load address 0x080002e4
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+ *(.bss)
+ *(.bss*)
+ *(COMMON)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+
+._user_heap_stack
+                0x20000000      0x600 load address 0x080002e4
+                0x20000000                        . = ALIGN (0x8)
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x20000200                        . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x200 
+                0x20000600                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000200      0x400 
+                0x20000600                        . = ALIGN (0x8)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(build/firmware.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000      0x3f2
+ .debug_info    0x00000000      0x188 build/startup.o
+ .debug_info    0x00000188       0xfd build/main.o
+ .debug_info    0x00000285      0x13a /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .debug_info    0x000003bf       0x33 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+.debug_abbrev   0x00000000      0x2ba
+ .debug_abbrev  0x00000000      0x117 build/startup.o
+ .debug_abbrev  0x00000117       0xbe build/main.o
+ .debug_abbrev  0x000001d5       0xbd /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .debug_abbrev  0x00000292       0x28 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+.debug_aranges  0x00000000       0x88
+ .debug_aranges
+                0x00000000       0x28 build/startup.o
+ .debug_aranges
+                0x00000028       0x20 build/main.o
+ .debug_aranges
+                0x00000048       0x20 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .debug_aranges
+                0x00000068       0x20 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+.debug_rnglists
+                0x00000000       0x59
+ .debug_rnglists
+                0x00000000       0x19 build/startup.o
+ .debug_rnglists
+                0x00000019       0x2c build/main.o
+ .debug_rnglists
+                0x00000045       0x14 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+
+.debug_macro    0x00000000      0xff0
+ .debug_macro   0x00000000       0x63 build/startup.o
+ .debug_macro   0x00000063      0xade build/startup.o
+ .debug_macro   0x00000b41       0x22 build/startup.o
+ .debug_macro   0x00000b63       0x56 build/startup.o
+ .debug_macro   0x00000bb9       0x51 build/startup.o
+ .debug_macro   0x00000c0a      0x103 build/startup.o
+ .debug_macro   0x00000d0d       0x6a build/startup.o
+ .debug_macro   0x00000d77      0x1df build/startup.o
+ .debug_macro   0x00000f56       0x72 build/main.o
+ .debug_macro   0x00000fc8       0x28 build/main.o
+
+.debug_line     0x00000000      0x5d1
+ .debug_line    0x00000000      0x183 build/startup.o
+ .debug_line    0x00000183      0x1cd build/main.o
+ .debug_line    0x00000350      0x1c8 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .debug_line    0x00000518       0xb9 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+.debug_str      0x00000000     0x3ef8
+ .debug_str     0x00000000     0x3ef8 build/startup.o
+                               0x3d7c (size before relaxing)
+ .debug_str     0x00003ef8        0x0 build/main.o
+                               0x3e20 (size before relaxing)
+ .debug_str     0x00003ef8        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+                                0x1f5 (size before relaxing)
+ .debug_str     0x00003ef8        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+                                 0xd9 (size before relaxing)
+
+.comment        0x00000000       0x46
+ .comment       0x00000000       0x46 build/startup.o
+                                 0x24 (size before relaxing)
+ .comment       0x00000046        0x0 build/main.o
+                                 0x24 (size before relaxing)
+ .comment       0x00000046        0x0 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+                                 0x24 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x32
+ .ARM.attributes
+                0x00000000       0x34 build/startup.o
+ .ARM.attributes
+                0x00000034       0x34 build/main.o
+ .ARM.attributes
+                0x00000068       0x34 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .ARM.attributes
+                0x0000009c       0x20 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+.debug_frame    0x00000000       0xac
+ .debug_frame   0x00000000       0x38 build/startup.o
+ .debug_frame   0x00000038       0x20 build/main.o
+ .debug_frame   0x00000058       0x2c /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+ .debug_frame   0x00000084       0x28 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
+
+.debug_loclists
+                0x00000000      0x119
+ .debug_loclists
+                0x00000000       0x1c build/main.o
+ .debug_loclists
+                0x0000001c       0xfd /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memset.o)
+
+.debug_line_str
+                0x00000000       0xc6
+ .debug_line_str
+                0x00000000       0xc6 /usr/lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memcpy.o)
